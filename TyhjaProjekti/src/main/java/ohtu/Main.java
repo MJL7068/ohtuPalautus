@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         // vaihda oma opiskelijanumerosi seuraavaan
-        String studentNr = "014410961";
+        String studentNr = "0144207622";
         if ( args.length>0) {
             studentNr = args[0];
         }
