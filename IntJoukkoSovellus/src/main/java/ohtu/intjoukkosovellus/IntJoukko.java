@@ -19,37 +19,24 @@ public class IntJoukko {
     }
 
     public IntJoukko(int kapasiteetti) {
+        this();
         if (kapasiteetti < 0) {
             return;
         }
         ljono = new int[kapasiteetti];
-        for (int i = 0; i < ljono.length; i++) {
-            ljono[i] = 0;
-        }
-        alkioidenLkm = 0;
-        this.kasvatuskoko = OLETUSKASVATUS;
-
     }
 
     public IntJoukko(int kapasiteetti, int kasvatuskoko) {
-        if (kapasiteetti < 0) {
-            return;
-        }
+        this(kapasiteetti);
         if (kasvatuskoko < 0) {
             return;
         }
-        ljono = new int[kapasiteetti];
-        for (int i = 0; i < ljono.length; i++) {
-            ljono[i] = 0;
-        }
-        alkioidenLkm = 0;
         this.kasvatuskoko = kasvatuskoko;
     }
 
     public boolean lisaaLukuJoukkoon(int luku) {
         if (!lukuKuuluuJoukkoon(luku)) {
-            ljono[alkioidenLkm] = luku;
-            alkioidenLkm++;
+            ljono[alkioidenLkm++] = luku;
 
             if (alkioidenLkm == ljono.length) {
                 int[] taulukkoOld = ljono;
